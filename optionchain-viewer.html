@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Option Chain Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Option Chain Data Viewer</h2>
+
+  <label for="expiry">Select Expiry:</label>
+  <select id="expirySelect"></select>
+
+  <table id="optionTable">
+    <thead>
+      <tr>
+        <th>CE Vega</th>
+        <th>CE Delta</th>
+        <th>CE Theta</th>
+        <th>Strike</th>
+        <th>PE Theta</th>
+        <th>PE Delta</th>
+        <th>PE Vega</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
