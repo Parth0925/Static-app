@@ -4,14 +4,16 @@ const tableBody = document.querySelector('#optionTable tbody');
 const UnderlyingScrip = 51; // SENSEX
 const UnderlyingSeg = 'IDX_I';
 
+//const BASE_URL = 'http://192.168.1.19:5001/api/expirylist';
+
 function formatNumber(num) {
   return num !== undefined ? Number(num).toFixed(4) : '-';
 }
 
 // Load expiry dates on page load
 
-fetch('https://option-greeks-wlzo.onrender.com/api/expirylist', {
-//fetch('http://localhost:5001/api/expirylist', {
+//fetch('https://option-greeks-wlzo.onrender.com/api/expirylist', {
+fetch('http://192.168.1.19:5001/api/expirylist', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ UnderlyingScrip, UnderlyingSeg })
@@ -41,7 +43,7 @@ expirySelect.addEventListener('change', () => {
 
 // Fetch and render option chain
 function fetchOptionChain(expiry) {
-  fetch('http://localhost:5001/api/optionchain', {
+  fetch('http://192.168.1.19:5001/api/optionchain', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ UnderlyingScrip, UnderlyingSeg, Expiry: expiry })
